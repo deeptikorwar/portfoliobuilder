@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Manage logins
+{% endblock %}
+
+{% block main %}
+    <a class="badge badge-light" href="/admin"> < Back</a>
+    <a class="badge badge-primary" href="/addlogin">Add login</a>
+
+    {% if error %}
+        <p class="error"> {{ error }} </p>
+    {% endif %}
+
+        <div class="centalign p-5">
+            <table class="table table-sm">
+                <caption>List of logins</caption>
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Login</th>
+                        <th scope="col">Created on</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in ulist %}
+                        <tr>
+                          <th scope="row">{{ item[1] }}</th>
+                          <td>{{ item[2] }}</td>
+                          <form action="/manage" method="post">
+                          <input type="hidden" id="index" name="index" value="{{ item[1] }}">
+                          <td><button type="submit" name="submit" value="{{ item[0] }}" class="btn btn-primary btn-block">Delete</button></td>
+                          </form>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+{% endblock %}

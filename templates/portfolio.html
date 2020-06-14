@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My portfolio
+{% endblock %}
+
+{% block main %}
+    <a class="badge badge-light" href="/index"> < Back</a>
+
+    {% if error %}
+        <p class="error"> {{ error }} </p>
+    {% endif %}
+
+    <p>Your portfolio pages. Choose one of the following layouts to list your pages.</p>
+    <p class="font-weight-bold">Option 1:</p>
+        <ul>
+        {% for f in with_fnames %}
+            <li><a href="{{ f[0] }}">{{ f[1] }}</a></li>
+            {# refer https://jinja.palletsprojects.com/en/2.11.x/templates/#block-nesting-and-scope #}
+                {% from f[2] import summary  %}
+                <p>{{ summary }}</p>
+        {% endfor %}
+        </ul>
+
+    <p class="font-weight-bold">Option 2:</p>
+    {% for f in with_fnames %}
+        {% from f[2] import ptitle  %}
+        {% from f[2] import summary  %}
+        <div class="card mb-3">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="../static/images/{{ f[1] }}.png" class="card-img-top" alt="{{ ptitle }}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ ptitle }}</h5>
+                        <p class="card-text">{{ summary }}</p>
+                        <a href="{{ f[0] }}" class="btn btn-primary">View {{ ptitle }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <p class="font-weight-bold">Option 3:</p>
+        {% for f in with_fnames %}
+            {% from f[2] import ptitle  %}
+            <p>{{ ptitle }}</p>
+            {% from f[2] import summary  %}
+            <p>{{ summary }}</p>
+        {% endfor %}
+    <p class="p-3"></p>
+{% endblock %}

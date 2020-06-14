@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View history
+{% endblock %}
+
+{% block main %}
+    <a class="badge badge-light" href="/admin"> < Back</a>
+    <div class="centalign p-5">
+        <table class="table table-sm">
+            <caption>List of portfolio views</caption>
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Login</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Pages viewed</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in tlist %}
+                    <tr>
+                        <th scope="row">{{ item[1] }}</th>
+                        <td>{{ item[2].strftime("%a %d %b %Y") }}</td>
+                        <td>{{ item[3] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

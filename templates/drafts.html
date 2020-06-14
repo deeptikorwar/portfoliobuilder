@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Draft pages
+{% endblock %}
+
+{% block main %}
+    <a class="badge badge-light" href="/admin"> < Back</a>
+    {% if error %}
+        <p class="error"> {{ error }} </p>
+    {% endif %}
+    <p>Your draft pages</p>
+        <ul>
+        {% for f in with_fnames %}
+            <li><a href="{{ f[0] }}">{{ f[1] }}</a></li>
+        {% endfor %}
+        </ul>
+{% endblock %}

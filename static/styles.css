@@ -1,0 +1,43 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+    color: #537fbe;
+}
+
+/* colors for your name in nav bar */
+nav .navbar-brand .blue
+{
+    color: #1c4587;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main .centalign
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+
+.error /* style for error messages */
+{
+    color: red;
+}
+
+caption
+{
+    /* override Bootstrap's caption-side:bottom */
+    caption-side:top;
+
+}

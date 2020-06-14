@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <div class="centalign">
+        <form action="/login" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="form-group">
+                <input  class="form-control" name="password" placeholder="Password" type="password">
+            </div>
+            {% if error %}
+                <p class="error"> {{ error }} </p>
+            {% endif %}
+            <button class="btn btn-primary" type="submit">Log In</button>
+        </form>
+        <div class="card text-center d-inline-block w-auto m-5">
+            <div class="card-header">
+                Hi, there! Would you like to browse through my portfolio? Contact me for the login details.
+            </div>
+        </div>
+    </div>
+{% endblock %}

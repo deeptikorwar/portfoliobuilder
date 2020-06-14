@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin page
+{% endblock %}
+
+{% block main %}
+    <div class="row justify-content-md-center p-5">
+        <div class="col-sm-4">
+            <form action="/admin" method="post">
+                {% if error %}
+                    <p class="error"> {{ error }} </p>
+                {% endif %}
+                <div class="form-group">
+                    <button type="submit" name="submit" value="history" class="btn btn-primary btn-block">View history</button>
+                    <button type="submit" name="submit" value="drafts" class="btn btn-primary btn-block">Review drafts</button>
+                    <button type="submit" name="submit" value="logins" class="btn btn-primary btn-block">Manage logins</button>
+                    <button type="submit" name="submit" value="pwd" class="btn btn-primary btn-block">Change admin password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

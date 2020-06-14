@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Project 1
+{% endblock %}
+
+{% set ptitle %}
+    Project 1
+{% endset %}
+
+{% set summary %}
+    <p>Summary1: Type summary for portfolio item 1 here.</p>
+{% endset %}
+
+{% block main %}
+    <a class="badge badge-light" href="../portfolio"> < Back</a>
+    <p>My first project</p>
+    {{ summary }}
+{% endblock %}

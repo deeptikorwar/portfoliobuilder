@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change password
+{% endblock %}
+
+{% block main %}
+    <a class="badge badge-light" href="/admin"> < Back</a>
+    <div class="centalign">
+        <form action="/changepwd" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="password" placeholder="new admin password" type="password">
+            </div>
+            {% if error %}
+                <p class="error"> {{ error }} </p>
+            {% endif %}
+            <button class="btn btn-primary" type="submit">Set password</button>
+        </form>
+    </div>
+{% endblock %}
