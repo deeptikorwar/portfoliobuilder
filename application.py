@@ -273,7 +273,7 @@ def addlogin():
 @login_required
 def getportfolio(fname=None):
     # Get list of published pages
-    files_list = getFiles("templates/portfolio")
+    files_list = sorted(getFiles("templates/portfolio"))
 
     with_fnames =[]
     for f in files_list:
