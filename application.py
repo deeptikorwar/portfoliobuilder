@@ -46,6 +46,11 @@ def index():
 @app.route("/about")
 @login_required
 def about():
+
+    if session["user_id"] != 1:
+        #log view to history if date or page not in history
+        insert_view(session["user_id"],'about.html')
+
     return render_template("about.html")
 
 @app.route("/privacy")
@@ -293,6 +298,11 @@ def getportfolio(fname=None):
         return render_template("portfolio.html", error=error, with_fnames=with_fnames)
 
     else:
+
+        if session["user_id"] != 1:
+            #log view to history if date or page not in history
+            insert_view(session["user_id"],'portfolio.html')
+
         return render_template("portfolio.html", fname=fname, with_fnames=with_fnames)
 
 @app.route("/confirmdel")
