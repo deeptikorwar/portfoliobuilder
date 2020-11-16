@@ -144,6 +144,41 @@ To reorder the items within the portfolio page, prefix file names with a number.
 # Tips
 Browse through the [Bootstrap documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/) and make use of the various prebuilt components offered by Bootstrap.
 
+# Structure
+```
+├── application.py
+├── data.db
+├── helpers.py
+├── query.py
+├── README.md
+├── static
+│   ├── favicon.ico
+│   ├── images
+│   │   ├── proc1.png
+│   │   └── proc2.png
+│   └── styles.css
+└── templates
+    ├── about.html
+    ├── addlogin.html
+    ├── admin.html
+    ├── changepwd.html
+    ├── confirmdel.html
+    ├── drafts
+    │   ├── sample1.html
+    │   └── sample2.html
+    ├── drafts.html
+    ├── history.html
+    ├── index.html
+    ├── layout.html
+    ├── login.html
+    ├── manage.html
+    ├── portfolio
+    │   ├── proc1.html
+    │   └── proc2.html
+    ├── portfolio.html
+    └── privacy.html
+```
+
 # Acknowledgements
 With thanks to the following extensions and toolkits:
 * [Flask-Session](https://flask-session.readthedocs.io/)
