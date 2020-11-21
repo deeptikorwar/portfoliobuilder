@@ -131,6 +131,41 @@ Or, you can copy the relevant HTML tags from the draft into one of the files wit
 ## Step 6: Create logins for recruiters
 When you’re ready with your shiny portfolio, you can share it with recruiters by creating a separate login for each recruiter. To do this, log in to your site, select **Manage logins** > **Add new login**.
 
+# (Optional) Setting up a local development environment
+If you have Python 3 installed and want to tinker with this project on your local machine, follow the below steps. For Python 2, refer to the [Flask documentation](https://flask.palletsprojects.com/en/1.1.x/installation/) and customise the below steps accordingly.
+1. Create a folder and change directory:
+
+    ```
+    $ mkdir mylocalpjt && cd mylocalpjt
+    ```
+    
+1. Create a virtual environment and activate it:
+
+    ```
+    $ python3 -m venv myflaskenv
+    $ . myflaskenv/bin/activate
+    ```
+    
+1. Install the dependencies within the virtual environment:
+
+    ```
+    $ pip3 install flask Flask-Session sqlalchemy
+    ```
+    
+1. Clone the project and change directory:
+
+    ```
+    $ git clone https://github.com/deeptikorwar/portfoliobuilder && cd portfoliobuilder
+    ```
+
+1. Run the application locally:
+
+    ```
+    $ python3 application.py
+    ```
+    
+Open [http://localhost:5000/](http://localhost:5000/) in your browser to view the app. You can use the procedures within *Step 2* to *Step 6* to build your portfolio (refer to the project [file structure](#structure) for file paths on the local machine). Once you're finished, you can replace these files on your PythonAnywhere site to update your public portfolio.
+
 # Housekeeping
 As you have limited space in your free PythonAnywhere account, free up space by deleting unused portfolio pages, images, and recruiter logins. 
 
